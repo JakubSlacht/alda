@@ -472,3 +472,11 @@ func TestVoices(t *testing.T) {
 		},
 	)
 }
+
+func BenchmarkVoices(b *testing.B) {
+	score := NewScore()
+	for i := 0; i < 1000; i++ {
+		score.Update(VoiceMarker{VoiceNumber: 1})
+		score.Update(PartDeclaration{Names: []string{"piano"}}, Note{Pitch: LetterAndAccidentals{NoteLetter: D}, Duration: Duration{Components: []DurationComponent{NoteLength{Denominator: 2}}}})
+	}
+}

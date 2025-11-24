@@ -101,6 +101,7 @@ func addNoteOrRest(score *Score, noteOrRest ScoreUpdate) error {
 	}
 
 	var specifiedDuration Duration
+
 	switch noteOrRest := noteOrRest.(type) {
 	case Note:
 		specifiedDuration = noteOrRest.Duration

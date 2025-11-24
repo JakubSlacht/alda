@@ -649,3 +649,10 @@ func TestNoteValidation(t *testing.T) {
 		}
 	}
 }
+
+func BenchmarkNotes(b *testing.B) {
+	score := NewScore()
+	for i := 0; i < 100000; i++ {
+		score.Update(PartDeclaration{Names: []string{"piano"}}, Note{Pitch: LetterAndAccidentals{NoteLetter: D}, Duration: Duration{Components: []DurationComponent{NoteLength{Denominator: 2}}}})
+	}
+}

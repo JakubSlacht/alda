@@ -284,7 +284,9 @@ func (s *scanner) addToken(tokenType TokenType, literal interface{}) {
 		},
 	}
 
-	log.Debug().Str("token", token.String()).Msg("Adding token.")
+	if log.Debug().Enabled() {
+		log.Debug().Str("token", token.String()).Msg("Adding token.")
+	}
 	s.tokens = append(s.tokens, token)
 }
 
