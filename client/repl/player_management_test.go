@@ -8,7 +8,7 @@ import (
 	"alda.io/client/transmitter"
 )
 
-// --- Stubs ---
+// --- Stub ---
 
 var stubPlayer = system.PlayerState{ID: "player1", Port: 1234}
 
@@ -88,7 +88,7 @@ func TestShutdownPlayerNoPlayer(t *testing.T) {
 }
 
 func TestWithTransmitterSuccess(t *testing.T) {
-	// Prepare a server with a mock player
+	// Prepare a server with a stub player
 	s := &Server{player: stubPlayer}
 
 	// Wrap the original transmitter constructor temporarily
